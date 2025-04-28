@@ -94,10 +94,3 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
-
-flutter_native_splash:
-  color: "#ffffff"
-  image: "assets/icon/icon.png"
-  android_gravity: center
-  ios_content_mode: center
-  fullscreen: true
