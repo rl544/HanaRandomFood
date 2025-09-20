@@ -73,7 +73,7 @@ class _RandomSelectorScreenState extends State<RandomSelectorScreen>
       end: 2 * pi,
     ).animate(CurvedAnimation(parent: _controller, curve: Curves.elasticOut));
     _loadCsvData(); // from Web
-    // _loadCSV(); // from internal
+    //_loadCSV(); // from internal
   }
 
   Future<void> _loadCsvData() async {
@@ -91,8 +91,9 @@ class _RandomSelectorScreenState extends State<RandomSelectorScreen>
       });
     } else {
       setState(() {
-        _loading = false;
-        _errorMessage = 'Failed to load CSV data.';
+        //_loading = false;
+        _errorMessage = 'Failed to load Online CSV data.';
+        _loadCSV();
       });
     }
   }
@@ -135,7 +136,7 @@ class _RandomSelectorScreenState extends State<RandomSelectorScreen>
   Future<void> _loadCSV() async {
     final csvString = await rootBundle.loadString('assets/list.csv');
     setState(() {
-      items = parseLCsv(csvString);
+      _csvData = parseLCsv(csvString); //items
       _loading = false;
     });
   }
